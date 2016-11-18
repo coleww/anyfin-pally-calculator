@@ -17,7 +17,7 @@ const MinMaxDamage = React.createClass({
     this.setState({spots: newSpots})
   },
   render() {
-    const { maxDamage, minDamage } = calculateMinMaxDamage(this.state.spots, this.props.graveyard);
+    const { maxDamage, minDamage, odds } = calculateMinMaxDamage(this.state.spots, this.props.graveyard);
     return (
       <div className="areas">
         <div className="area controls">
@@ -29,6 +29,12 @@ const MinMaxDamage = React.createClass({
           <div className="areaHeader">
             Built by <a href="http://cole.money">Cole Willsea</a> with React, Redux, and Flexbox. <a href="https://github.com/coleww/anyfin-pally-calculator">Source code</a>
           </div>
+
+          <ul className="odds">
+            {Object.keys(odds).map((damage) =>
+              <li>{damage}: {odds[damage]}%</li>)}
+          </ul>
+
         </div>
         <div className="area minDamage">
           <div className="areaHeader">

@@ -34,8 +34,15 @@ function calculateMaxDamage (spots, cards) {
     })
   }
 
+  let damageCounter = {}
+
   allCombos.forEach((combo) => {
     let damage = calculateDamage(combo)
+    if (damageCounter[damage]) {
+      damageCounter[damage] += 1
+    } else {
+      damageCounter[damage] = 1
+    }
     if (damage > maximum.damage) {
       maximum.damage = damage
       maximum.cards = combo
@@ -45,8 +52,11 @@ function calculateMaxDamage (spots, cards) {
       minimum.cards = combo
     }
   })
-
-  return {minDamage: minimum, maxDamage: maximum}
+  Object.keys(damageCounter).forEach((count) => {
+    damageCounter[count] = (damageCounter[count] / allCombos.length) * 100
+  })
+  console.log(damageCounter)
+  return {minDamage: minimum, maxDamage: maximum, odds: damageCounter}
 }
 
 export default calculateMaxDamage;

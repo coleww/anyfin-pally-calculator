@@ -49,6 +49,10 @@ it('handles bringing them all back correctly', () => {
   });
 });
 
+// it('calculates odds', () => {
+
+// })
+
 // it('handles Old Murk-Eye', () => {
 
 // })
