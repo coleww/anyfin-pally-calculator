@@ -28,10 +28,11 @@ function calculateMaxDamage (spots, cards) {
     allCombos = allCombos.filter((combo) => {
       return combo.length === spots
     })
+  } else {
+    allCombos = allCombos.filter((combo) => {
+      return combo.length === cards.length
+    })
   }
-
-
-  // allCombos = JSON.parse(JSON.stringify(allCombos))
 
   allCombos.forEach((combo) => {
     let damage = calculateDamage(combo)
@@ -45,7 +46,6 @@ function calculateMaxDamage (spots, cards) {
     }
   })
 
-  if (cards.length <= spots) minimum = maximum
   return {minDamage: minimum, maxDamage: maximum}
 }
 
