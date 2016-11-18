@@ -7,8 +7,8 @@ const defaultState = {
   graveyard: []
 };
 
-// TODO: add dev/prod logic to ensure this doesn't "go live", lol
-const store = createStore(rootReducer, defaultState);
+const store = createStore(rootReducer, defaultState,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 
 export default store;

@@ -11,7 +11,7 @@ const cardData = [
     buff: 2,
     attack: 2,
     charge: false,
-    imgSrc: 'bluegill'
+    imgSrc: 'warrior'
   },
   {
     name: 'Generic Murloc',

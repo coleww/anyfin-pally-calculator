@@ -26,14 +26,8 @@ const MinMaxDamage = React.createClass({
             <button className="decrementSpots" onClick={this.decrementSpots}>-</button>
             <button className="incrementSpots" onClick={this.incrementSpots}>+</button>
           </div>
-        </div>
-        <div className="area maxDamage">
           <div className="areaHeader">
-            Max Damage: {maxDamage.damage}
-          </div>
-          <div className="cards">
-            {maxDamage.cards.map((card, i) =>
-              <Card {...this.props} key={i} i={i} card={card} />)}
+            Built by <a href="http://cole.money">Cole Willsea</a> with React, Redux, and Flexbox. <a href="https://github.com/coleww/anyfin-pally-calculator">Source code</a>
           </div>
         </div>
         <div className="area minDamage">
@@ -45,14 +39,24 @@ const MinMaxDamage = React.createClass({
               <Card {...this.props} key={i} i={i} card={card} />)}
           </div>
         </div>
-        <div className="area credits">
+        <div className="area maxDamage">
           <div className="areaHeader">
-            Built by <a href="http://cole.money">Cole Willsea</a> with React, Redux, and Flexbox. <a href="https://github.com/coleww/freeze-mage-calculator">Source code</a>
+            Max Damage: {maxDamage.damage}
+          </div>
+          <div className="cards">
+            {maxDamage.cards.map((card, i) =>
+              <Card {...this.props} key={i} i={i} card={card} />)}
           </div>
         </div>
       </div>
     );
   }
 });
+
+// <div className="area credits">
+//               <div className="areaHeader">
+//
+//               </div>
+//             </div>
 
 export default MinMaxDamage;

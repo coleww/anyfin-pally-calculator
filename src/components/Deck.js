@@ -4,7 +4,7 @@ import Card from './Card';
 const Deck = React.createClass({
   render() {
     return (
-      <div className="area deck">
+      <div className="area half deck">
         <div className="areaHeader">
           Murlocs
         </div>

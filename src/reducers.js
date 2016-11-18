@@ -1,5 +1,4 @@
 const rootReducer = function (state = {}, action) {
-  // the data set will not really grow, so cloning the state like this each time seems ok?
   const graveyard = state.graveyard.slice(0);
   const deck = state.deck.slice(0);
 
